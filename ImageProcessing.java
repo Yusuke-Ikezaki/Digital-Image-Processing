@@ -69,12 +69,12 @@ public abstract class ImageProcessing{
     }
 
     /* Process */
-    public void processImage(String before_name,String after_name){
+    public void convert(String before_name,String after_name){
 	readImage(before_name);
-	convert();
+	processImage();
 	writeImage(after_name);
     }
-    public abstract void convert();
+    public abstract void processImage();
 
     /* File */
     public void readImage(String name){
