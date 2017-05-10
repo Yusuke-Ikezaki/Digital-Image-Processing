@@ -7,8 +7,8 @@ public abstract class Converter extends ImageProcessing{
 	int frame=size/2;
 	for(int y=frame;y<getHeight()-frame;y++)
 	    for(int x=frame;x<getWidth()-frame;x++){
-		process(x,y);
+		operate(x,y);
 	    }
     }
-    public abstract void process(int x,int y);
+    public abstract void operate(int x,int y);
 }
