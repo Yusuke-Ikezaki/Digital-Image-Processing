@@ -2,7 +2,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
 
-public abstract class ImageProcessing{
+public class ImageProcessing{
     private int w,h;
     private BufferedImage read,write;
 
@@ -68,14 +68,6 @@ public abstract class ImageProcessing{
 	return copy;
     }
 
-    /* Process */
-    public void convert(String before_name,String after_name){
-	readImage(before_name);
-	processImage();
-	writeImage(after_name);
-    }
-    public abstract void processImage();
-
     /* File */
     public void readImage(String name){
 	try{
@@ -83,7 +75,6 @@ public abstract class ImageProcessing{
 	    setRead(ImageIO.read(before));
 	    setWidth(read.getWidth()); setHeight(read.getHeight());
 	    setWrite(copyImage(read));
-	    //new BufferedImage(w,h,BufferedImage.TYPE_INT_RGB)
 	} catch(IOException e){
 	    System.out.println(e);
 	}
