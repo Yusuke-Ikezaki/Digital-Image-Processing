@@ -1,21 +1,21 @@
-public class Postarization extends PixelConverter{
-    /* parameter of postarize */
+public class Posterization extends PixelConverter{
+    /* parameter of posterize */
     private int level=4;
     
     /* constructor */
-    public Postarization(){
+    public Posterization(){
     }
-    public Postarization(int level){
+    public Posterization(int level){
 	this.level=level;
     }
 
     /* concrete process */
     public int process(int c){
 	int gray=gray(c);
-	return postarize(gray);
+	return posterize(gray);
     }
-    /* postarization */
-    public int postarize(int gray){
+    /* posterization */
+    public int posterize(int gray){
 	int base=256/(level-1);
 	for(int i=1,output=0;i<level;i++,output+=base)
 	    if(gray<256*i/level) return rgb(output,output,output);
