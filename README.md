@@ -14,6 +14,9 @@ digital image processing by Java
   - Nega Posi  
       parameter: None  
       constructor: NegaPosi()  
+  - Sobel Filter  
+      parameter: None  
+      constructor: Sobel()  
 
 ~ how to use ~  
   - example  
@@ -26,4 +29,6 @@ digital image processing by Java
     c.convert(before_change_image_name, after_change_image_name);  
     c=new NegaPosi();  
     c.convert(before_change_image_name, after_change_image_name);  
+    c=new Sobel();
+    c.convert(before_change_image_name, after_change_image_name);
     ~~~
