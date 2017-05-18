@@ -14,9 +14,18 @@ digital image processing by Java
   - Nega Posi  
       parameter: None  
       constructor: NegaPosi()  
+  - Averaging Filter  
+      parameter: size  
+      constructor: Averaging(int size)  
+  - Gaussian Filter  
+      parameter: size  
+      constructor: Gaussian(int size)  
   - Sobel Filter  
       parameter: None  
       constructor: Sobel()  
+  - Prewitt Filter  
+      parameter: None  
+      constructor: Prewitt()  
 
 ~ how to use ~  
   - example  
@@ -29,6 +38,12 @@ digital image processing by Java
     c.convert(before_change_image_name, after_change_image_name);  
     c=new NegaPosi();  
     c.convert(before_change_image_name, after_change_image_name);  
-    c=new Sobel();
-    c.convert(before_change_image_name, after_change_image_name);
+    c=new Averaging(3);  
+    c.convert(before_change_image_name, after_change_image_name);  
+    c=new Gaussian(5);  
+    c.convert(before_change_image_name, after_change_image_name);  
+    c=new Sobel();  
+    c.convert(before_change_image_name, after_change_image_name);  
+    c=new Prewitt();  
+    c.convert(before_change_image_name, after_change_image_name);  
     ~~~
