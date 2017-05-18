@@ -20,12 +20,18 @@ digital image processing by Java
   - Gaussian Filter  
       parameter: size  
       constructor: Gaussian(int size)  
+  - Differential Filter  
+      parameter: None  
+      constructor: Differential()  
   - Sobel Filter  
       parameter: None  
       constructor: Sobel()  
   - Prewitt Filter  
       parameter: None  
       constructor: Prewitt()  
+  - Laplacian Filter  
+      parameter: None  
+      constructor: Laplacian()  
 
 ~ how to use ~  
   - example  
@@ -42,8 +48,12 @@ digital image processing by Java
     c.convert(before_change_image_name, after_change_image_name);  
     c=new Gaussian(5);  
     c.convert(before_change_image_name, after_change_image_name);  
+    c=new Differential();  
+    c.convert(before_change_image_name, after_change_image_name);  
     c=new Sobel();  
     c.convert(before_change_image_name, after_change_image_name);  
     c=new Prewitt();  
+    c.convert(before_change_image_name, after_change_image_name);  
+    c=new Laplacian();  
     c.convert(before_change_image_name, after_change_image_name);  
     ~~~
