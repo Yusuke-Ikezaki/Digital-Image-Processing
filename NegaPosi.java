@@ -1,9 +1,12 @@
 public class NegaPosi extends PixelConverter{
-    /* concrete process */
-    public int process(int c){
-	int r=255-r(c);
-	int g=255-g(c);
-	int b=255-b(c);
-        return rgb(r,g,b);
+    /* nega posi function */
+    public int functionR(int r){
+	return 255-r;
+    }
+    public int functionG(int g){
+	return 255-g;
+    }
+    public int functionB(int b){
+	return 255-b;
     }
 }

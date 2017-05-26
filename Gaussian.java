@@ -30,7 +30,4 @@ public class Gaussian extends Smoother{
     public int process(int x,int y){
 	return weight[y+center][x+center];
     }
-    public int getSum(){
-	return sum;
-    }
 }

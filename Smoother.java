@@ -1,4 +1,7 @@
 public abstract class Smoother extends AreaConverter{
+    /* parameter of filtering */
+    protected int sum=1;
+
     /* filtering for Smoothing */
     public int filtering(int x,int y){
 	int frame=size/2;
@@ -6,12 +9,13 @@ public abstract class Smoother extends AreaConverter{
 	for(int i=-frame;i<=frame;i++)
 	    for(int j=-frame;j<=frame;j++){
 		int c=getRGB(x+j,y+i);
-		double weight=process(x,y);
-		r+=(int)(r(c)*weight);
-		g+=(int)(g(c)*weight);
-		b+=(int)(b(c)*weight);
+		int weight=process(j,i);
+		r+=r(c)*weight;
+		g+=g(c)*weight;
+		b+=b(c)*weight;
 	    }
+	r/=sum; g/=sum; b/=sum;
 	return rgb(r,g,b);
     }
-    public abstract double process(int x,int y);
+    public abstract int process(int x,int y);
 }

@@ -1,6 +1,7 @@
 public class ChromaKey extends PixelConverter{
-    /* parameter of mask_func */
+    /* background color */
     private int maskR=0,maskG=0,maskB=0;
+    /* range of background color */
     private int rangeR=0,rangeG=0,rangeB=0;
 
     /* constructor */
@@ -12,16 +13,18 @@ public class ChromaKey extends PixelConverter{
 	this.rangeR=rangeR; this.rangeG=rangeG; this.rangeB=rangeB;
     }
 
-    /* concrete process */
-    public int process(int c){
-	return mask_func(r(c),g(c),b(c));
+    /* mask function */
+    public int functionR(int r){
+	if(maskR-rangeR<=r&&r<=maskR+rangeR) return 0;
+	else return r;
     }
-    /* masking */
-    public int mask_func(int r,int g,int b){
-	if((maskR-rangeR<=r&&r<=maskR+rangeR)&&
-	   (maskG-rangeG<=g&&g<=maskG+rangeG)&&
-	   (maskB-rangeB<=b&&b<=maskB+rangeB)) return rgb(r,g,b);
-	else return rgb(0,0,0);
+    public int functionG(int g){
+	if(maskG-rangeG<=g&&g<=maskG+rangeG) return 0;
+	else return g;
+    }
+    public int functionB(int b){
+	if(maskB-rangeB<=b&&b<=maskB+rangeB) return 0;
+	else return b;
     }
     /* setter of mask color */
     public void setMask(int maskR,int maskG,int maskB){

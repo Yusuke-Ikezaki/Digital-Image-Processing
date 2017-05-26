@@ -12,7 +12,4 @@ public class Averaging extends Smoother{
     public int process(int x,int y){
 	return weight;
     }
-    public int getSum(){
-	return sum;
-    }
 }
