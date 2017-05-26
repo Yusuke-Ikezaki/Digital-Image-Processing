@@ -12,6 +12,6 @@ public class Laplacian extends EdgeExtraction{
     }
     /* horizontal filter */
     public int processW(int x,int y){
-	return processH(x,y);
+	return 0;
     }
 }
