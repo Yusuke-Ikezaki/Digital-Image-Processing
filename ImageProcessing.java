@@ -23,6 +23,12 @@ public class ImageProcessing{
 	return (int)(0.2989*r(c))+(int)(0.5870*g(c))+(int)(0.1140*b(c));
     }
     public int rgb(int r,int g,int b){
+	if(r<0) r=0;
+	else if(r>255) r=255;
+	if(g<0) g=0;
+	else if(g>255) g=255;
+	if(b<0) b=0;
+	else if(b>255) b=255;
         return 0xff000000 | r <<16 | g <<8 | b;
     }
     public int argb(int a,int r,int g,int b){
