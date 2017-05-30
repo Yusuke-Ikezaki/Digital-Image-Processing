@@ -1,4 +1,4 @@
-public class NegaPosi extends PixelConverter{
+public class NegaPosi extends ColorPixelConverter{
     /* nega posi function */
     public int functionR(int r){
 	return 255-r;
