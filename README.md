@@ -26,6 +26,15 @@ digital image processing by Java
   - Chroma Key  
       parameter: maskR, maskG, maskB, rangeR, rangeG, rangeB /* default 0, 0, 0, 0, 0, 0 */  
       constructor: ChromaKey(int maskR, int maskG, int maskB, int rangeR, int rangeG, int rangeB)  
+  - Gray  
+      parameter: None  
+      constructor: Gray()  
+  - Percentile method  
+      parameter: p  
+      constructor: Percentile(double p)  
+  - Discriminant Analysis method  
+      parameter: None  
+      constructor: DiscriminantAnalysis()  
   - Averaging Filter  
       parameter: size  
       constructor: Averaging(int size)  
@@ -80,6 +89,12 @@ digital image processing by Java
     c.convert(before_change_image_name, after_change_image_name);  
     c = new ChromaKey(100, 50, 75, 10, 5, 15);  
     c.convert(before_change_image_name, after_change_image_name);  
+    c = new Gray();  
+    c.convert(before_change_image_name, after_change_image_name); 
+    c = new Percentile(0.5);  
+    c.convert(before_change_image_name, after_change_image_name); 
+    c = new DiscriminantAnalysis();  
+    c.convert(before_change_image_name, after_change_image_name); 
     c = new Averaging(3);  
     c.convert(before_change_image_name, after_change_image_name);  
     c = new Gaussian(5);  
