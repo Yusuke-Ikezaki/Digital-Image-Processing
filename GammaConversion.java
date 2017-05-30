@@ -1,4 +1,4 @@
-public class GammaConversion extends PixelConverter{
+public class GammaConversion extends ColorPixelConverter{
     /* parameter of gamma_function */
     private double gammaR=2.0;
     private double gammaG=2.0;
