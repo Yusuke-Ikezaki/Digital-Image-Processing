@@ -1,4 +1,4 @@
-public class SCurve extends PixelConverter{
+public class SCurve extends ColorPixelConverter{
     /* sigmoid function */
     public int functionR(int r){
 	return (int)(255*1.0/(1.0+Math.exp(-(r-128)/16)));
