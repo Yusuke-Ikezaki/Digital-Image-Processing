@@ -1,36 +1,28 @@
-public class PolygonalCurve extends PixelConverter{
-    /* lower end of threshold */
-    private int lowerR=80,lowerG=80,lowerB=80;
-    /* upper end of threshold */
-    private int upperR=160,upperG=160,upperB=160;
+public class PolygonalCurve extends ColorPixelConverter{
+    /* parameter of polygonal curve function */
+    private double aR=150.0/255,aG=150.0/255,aB=150.0/255;
+    private double bR=0.0,bG=0.0,bB=0.0;
     
     /* constructor */
     public PolygonalCurve(){
     }
-    public PolygonalCurve(int lower,int upper){
-	lowerR=lowerG=lowerB=lower;
-	upperR=upperG=upperB=upper;
+    public PolygonalCurve(int a,int b){
+	aR=aG=aB=a;
+	bR=bG=bB=b;
     }
-    public PolygonalCurve(int lowerR,int lowerG,int lowerB,
-			  int upperR,int upperG,int upperB){
-	this.lowerR=lowerR; this.lowerG=lowerG; this.lowerB=lowerB;
-	this.upperR=upperR; this.upperG=upperG; this.upperB=upperB;
+    public PolygonalCurve(int aR,int aG,int aB,int bR,int bG,int bB){
+	this.aR=aR; this.aG=aG; this.aB=aB;
+	this.bR=bR; this.bG=bG; this.bB=bB;
     }
 
     /* Polygonal Curve function */
     public int functionR(int r){
-	if(r<lowerR) return 0;
-	else if(r<upperR) return (int)(255/(upperR-lowerR+0.1)*(r-lowerR));
-	else return 255;
+	return (int)(aR*r+bR);
     }
     public int functionG(int g){
-        if(g<lowerG) return 0;
-	else if(g<upperG) return (int)(255/(upperG-lowerG+0.1)*(g-lowerG));
-	else return 255;
+	return (int)(aG*g+bG);
     }
     public int functionB(int b){
-	if(b<lowerB) return 0;
-	else if(b<upperB) return (int)(255/(upperB-lowerB+0.1)*(b-lowerB));
-	else return 255;
-    }
+	return (int)(aB*b+bB);
+   }
 }
