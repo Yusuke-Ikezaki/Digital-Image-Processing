@@ -1,4 +1,7 @@
 public abstract class AreaConverter extends Converter{
+    /* filter size */
+    protected int size=1;
+
     /* operation for spatial filtering */
     public void processImage(){
 	int frame=size/2;

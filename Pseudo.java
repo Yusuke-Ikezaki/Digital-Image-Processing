@@ -1,4 +1,4 @@
-public class Pseudo extends PixelConverter{
+public class Pseudo extends ColorPixelConverter{
     /* pseudo color */
     public int functionR(int r){
 	if(r<128) return 0;

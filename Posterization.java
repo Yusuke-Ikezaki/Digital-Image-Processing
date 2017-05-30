@@ -1,4 +1,4 @@
-public class Posterization extends PixelConverter{
+public class Posterization extends ColorPixelConverter{
     /* parameter of posterize */
     private int levelR=4,levelG=4,levelB=4;
     

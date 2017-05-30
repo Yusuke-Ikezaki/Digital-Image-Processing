@@ -1,4 +1,4 @@
-public class ChromaKey extends PixelConverter{
+public class ChromaKey extends ColorPixelConverter{
     /* background color */
     private int maskR=0,maskG=0,maskB=0;
     /* range of background color */

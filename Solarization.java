@@ -1,4 +1,4 @@
-public class Solarization extends PixelConverter{
+public class Solarization extends ColorPixelConverter{
     /* lower end of threshold */
     private int lowerR=80,lowerG=80,lowerB=80;
     /* upper end of threshold */
